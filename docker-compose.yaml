@@ -1,0 +1,14 @@
+
+version: '3'
+services:
+  audiobook-organizer:
+    image: audiobook-organizer
+    build: .
+    ports:
+      - "5800:5800"
+    volumes:
+      - /home/plexadmin/appdata/downloads:/audiobooks
+      - /home/plexadmin/appdata/audiobook-organizer:/config
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
